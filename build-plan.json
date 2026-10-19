@@ -1,0 +1,290 @@
+{
+  "seo": {
+    "serp_context": null,
+    "target_radius": 25,
+    "primary_keyword": "fence contractor",
+    "secondary_keywords": [
+      "Wood Fence Installation",
+      "Chain Link Fencing",
+      "Fence Repair",
+      "Gate Installation",
+      "Privacy Fences",
+      "Wrought iron fencing  Cedar fencing  Privacy fencing  Security fencing  Decorative fencing  Backyard fencing  Pool fence installation",
+      "Farm fencing  Agricultural fencing  Gate installation  Fence gates  Automatic gate installation",
+      "Fence contractor"
+    ]
+  },
+  "tier": "premium",
+  "email": "dunnahuea@gmail.com",
+  "pages": [
+    {
+      "slug": "privacy-fence",
+      "type": "service",
+      "title": "privacy fence ",
+      "sections": "hero, service_details, process, testimonials, cta",
+      "services": [
+        "privacy fence"
+      ],
+      "primary_keyword": "privacy fence"
+    },
+    {
+      "slug": "cedar-fence",
+      "type": "service",
+      "title": "cedar fence ",
+      "sections": "hero, service_details, process, testimonials, cta",
+      "services": [
+        "cedar fence"
+      ],
+      "primary_keyword": "cedar fence"
+    },
+    {
+      "slug": "chain-link",
+      "type": "service",
+      "title": "chain link ",
+      "sections": "hero, service_details, process, testimonials, cta",
+      "services": [
+        "chain link"
+      ],
+      "primary_keyword": "chain link"
+    },
+    {
+      "slug": "wrought-iron",
+      "type": "service",
+      "title": "wrought iron ",
+      "sections": "hero, service_details, process, testimonials, cta",
+      "services": [
+        "wrought iron"
+      ],
+      "primary_keyword": "wrought iron"
+    },
+    {
+      "slug": "fence-repair",
+      "type": "service",
+      "title": "fence repair ",
+      "sections": "hero, service_details, process, testimonials, cta",
+      "services": [
+        "fence repair"
+      ],
+      "primary_keyword": "fence repair"
+    },
+    {
+      "slug": "fence-installation",
+      "type": "service",
+      "title": "fence installation ",
+      "sections": "hero, service_details, process, testimonials, cta",
+      "services": [
+        "fence installation"
+      ],
+      "primary_keyword": "fence installation"
+    }
+  ],
+  "phone": "(469) 321-7783",
+  "assets": {
+    "logo": null,
+    "images": [],
+    "page_allocations": null,
+    "recommended_hero_image": null
+  },
+  "design": {
+    "fonts": {},
+    "notes": "",
+    "style": "modern",
+    "colors": {
+      "extracted_from_logo": true
+    },
+    "logo_analysis": {}
+  },
+  "domain": "d-d-fence",
+  "phases": [
+    {
+      "name": "scaffold",
+      "phase": 1,
+      "status": "pending"
+    },
+    {
+      "name": "nav_footer_head",
+      "phase": 2,
+      "status": "pending"
+    },
+    {
+      "name": "homepage",
+      "phase": 3,
+      "status": "pending"
+    },
+    {
+      "name": "inner_pages",
+      "phase": 4,
+      "status": "pending"
+    },
+    {
+      "name": "seo_aeo_deploy",
+      "phase": 5,
+      "status": "pending"
+    }
+  ],
+  "address": {
+    "zip": "",
+    "city": "",
+    "state": "",
+    "street": ""
+  },
+  "content": {
+    "usps": [],
+    "years": 6,
+    "insurance": "",
+    "description": "D & D Fence is a fence contractor serving Ennis and Waxahachie, TX. Services include privacy fence, cedar fence, chain link, wrought iron, fence repair and fence installation. Contact D & D Fence at (469) 321-7783 for availability and pricing.",
+    "certifications": []
+  },
+  "reviews": [],
+  "tagline": "",
+  "industry": "Fence contractor",
+  "services": [
+    "privacy fence",
+    "cedar fence",
+    "chain link",
+    "wrought iron",
+    "fence repair",
+    "fence installation"
+  ],
+  "owner_name": "Austin Dunnahue",
+  "client_slug": "d-d-fence",
+  "form_action": "https://db.pageone.cloud/functions/v1/leads/d-d-fence",
+  "github_repo": "",
+  "web_sources": [
+    "https://share.google/YeJ2GN1LFZbrmb75W",
+    "http://ddfencetx.com/"
+  ],
+  "company_name": "D & D Fence",
+  "integrations": {
+    "geo": null,
+    "bbb_url": null,
+    "booking": {
+      "days": [],
+      "windows": [],
+      "authorized": false
+    },
+    "spanish": false,
+    "financing": null,
+    "photo_day": null,
+    "accepts_sms": false,
+    "gbp_place_id": "ChIJJ-CVsN7rToYRxU3yHz0EahE",
+    "estimate_tool": {
+      "pricing": [],
+      "authorized": false
+    },
+    "gbp_map_embed": null,
+    "directions_url": "https://www.google.com/maps/dir/?api=1&destination=place_id:ChIJJ-CVsN7rToYRxU3yHz0EahE",
+    "elfsight_embed": null,
+    "financing_note": null,
+    "scheduling_url": null,
+    "text_us_number": null,
+    "review_request_url": "https://search.google.com/local/writereview?placeid=ChIJJ-CVsN7rToYRxU3yHz0EahE",
+    "certification_links": []
+  },
+  "service_areas": [
+    "Ennis",
+    "Waxahachie"
+  ],
+  "address_public": false,
+  "business_hours": "Mon–Fri 7 AM–6 PM, closed Saturday and Sunday",
+  "image_curation": null,
+  "research_brief": {
+    "gbp": null,
+    "brief": {
+      "faqs": [
+        {
+          "a": "Cost depends on fence type, total linear footage, height, terrain, and removal of any old fence. Most residential projects are priced per linear foot, and a free on-site estimate gives you an exact written quote with materials and labor itemized.",
+          "q": "How much does a new fence cost?"
+        },
+        {
+          "a": "Many cities and counties require a permit for fences above a certain height, and HOAs often set rules on style, color, and placement. We can check local requirements for your address and help with paperwork so the project isn't delayed.",
+          "q": "Do I need a permit or HOA approval before building a fence?"
+        },
+        {
+          "a": "Check your plat map or recorded survey first. If the line is unclear, a licensed surveyor can mark it, which avoids disputes with neighbors. We recommend confirming the line before any digging starts.",
+          "q": "How do I know where my property line is?"
+        },
+        {
+          "a": "Vinyl and steel-reinforced or powder-coated metal typically last the longest with the least upkeep. Pressure-treated wood is more affordable and lasts well with regular staining or sealing. Chain-link is durable and low-cost for yards and perimeters. We can walk you through the tradeoffs for your site.",
+          "q": "Which fence material lasts the longest?"
+        },
+        {
+          "a": "A typical residential run is usually completed in one to three days, depending on length, terrain, and weather. Warranty coverage varies by material and workmanship, and we provide the exact terms in writing with your estimate so you know what is covered and for how long.",
+          "q": "How long does fence installation take, and what warranty do you offer?"
+        }
+      ],
+      "about_angle": "Position the company as a local, hands-on fence crew. Tell the founding story in a few sentences, name who does the estimates and the installs, and emphasize reliability, honest pricing, and pride in neighborhood work. Replace these generalities with the owner's real history, years in business, and a specific project as soon as those details are available.",
+      "hero_headline": "Fences Built to Last, Estimated Clearly, Installed Right",
+      "differentiators": [
+        "No competitor, existing-site, or Google Business Profile data was provided, so these are industry-level hypotheses to verify against D & D Fence's actual work before publishing.",
+        "Lead with the owner-operator or crew angle if it is true: a named person who answers the phone and shows up for the estimate.",
+        "Publish real project photos with before-and-after shots and the materials used (wood species, vinyl brand, chain-link gauge) to show quality more convincingly than generic claims.",
+        "Show clear, itemized written estimates and state the licensing and insurance status on every page so homeowners can compare bids easily.",
+        "Highlight the fence types offered (privacy, picket, chain-link, ornamental iron, vinyl, gates, and repair) so a single search for any type leads to a dedicated, relevant page.",
+        "Name the service area explicitly with city and neighborhood pages, since fence searches are strongly local and proximity drives the call.",
+        "Offer fast turnaround on estimates and a stated timeline for typical installs, which is a common reason homeowners choose one contractor over another.",
+        "Describe warranty terms and what they cover, and state how the company handles HOA rules, property-line surveys, and permits, since these are frequent pain points."
+      ],
+      "hero_subheadline": "Privacy, picket, chain-link, and custom gates from a local fence crew that shows up on time, explains the job up front, and stands behind the work.",
+      "tone_recommendation": "Friendly and professional: plain language, direct answers about price and timing, and a confident, practical voice that reads as local and trustworthy. Avoid jargon and high-pressure sales phrasing. Use authoritative detail (materials, codes, warranty terms) to build credibility, not to sound corporate."
+    },
+    "competitors": [],
+    "generated_at": "2026-10-19T19:39:04.071Z",
+    "existing_site": null
+  },
+  "competitor_urls": [],
+  "phone_secondary": "",
+  "service_grouping": {
+    "cap": 16,
+    "tier": "premium",
+    "groups": [
+      {
+        "page": "privacy fence",
+        "solo": true,
+        "services": [
+          "privacy fence"
+        ]
+      },
+      {
+        "page": "cedar fence",
+        "solo": true,
+        "services": [
+          "cedar fence"
+        ]
+      },
+      {
+        "page": "chain link",
+        "solo": true,
+        "services": [
+          "chain link"
+        ]
+      },
+      {
+        "page": "wrought iron",
+        "solo": true,
+        "services": [
+          "wrought iron"
+        ]
+      },
+      {
+        "page": "fence repair",
+        "solo": true,
+        "services": [
+          "fence repair"
+        ]
+      },
+      {
+        "page": "fence installation",
+        "solo": true,
+        "services": [
+          "fence installation"
+        ]
+      }
+    ],
+    "grouped_count": 6,
+    "original_count": 6
+  },
+  "lead_notification_email": "dunnahuea@gmail.com",
+  "lead_notification_phone": "(469) 321-7783",
+  "google_business_profile_url": "https://share.google/YeJ2GN1LFZbrmb75W"
+}

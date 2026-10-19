@@ -427,6 +427,23 @@ if (!function_exists('generateMetaTags')) {
     }
 }
 
+if (!function_exists('serviceLink')) {
+    /**
+     * Body-copy link to a service page — an <a> once /services/{slug}/ exists on disk, plain escaped text until then
+     * (link-integrity rule: never link a page that is not built yet). $label defaults to the config.php service name.
+     */
+    function serviceLink(string $slug, string $label = ''): string {
+        global $services;
+        if ($label === '') {
+            foreach ((array) $services as $fnEntry) {
+                if (($fnEntry['slug'] ?? '') === $slug) { $label = strtolower((string) $fnEntry['name']); break; }
+            }
+        }
+        $fnLabel = h($label !== '' ? $label : $slug);
+        return pageBuilt('/services/' . $slug . '/') ? '<a href="/services/' . h($slug) . '/">' . $fnLabel . '</a>' : $fnLabel;
+    }
+}
+
 // ── Estimate triggers ───────────────────────────────────────
 
 if (!function_exists('estimateLink')) {

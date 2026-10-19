@@ -1,0 +1,71 @@
+{
+  "pages": [
+    {
+      "path": "/",
+      "useful_because": "The homepage tells an Ennis or Waxahachie property owner who D & D Fence is (owned by Austin Dunnahue, 6 years in business, Mon–Fri 7–6, about 25 miles around both towns), which four fence materials it builds plus repair, and how those materials compare on use, look, upkeep and relative cost in one table. It explains a local fact no out-of-area page carries: Ellis County's Blackland Prairie clay swells and shrinks and works fence posts out of line, which is why a leaning section is usually a post problem. It lays out how a job runs from first call to build, answers the six questions owners ask before a new fence, shows the company's real Google reviews, and puts both a quick and a full estimate form on the page.",
+      "needs_confirmation": [
+        {
+          "fact": "No client photos or logo are on file; the page uses a type hero, icon service cards and an illustrated fence drawing in place of photos",
+          "question": "Can you send 8 or more original photos of finished fences, gates and repairs (ideally with the town each job was in), plus your logo file?",
+          "where": "hero, service cards, about section, recent-work gallery (not built until photos exist)"
+        },
+        {
+          "fact": "Estimates are done on site and the quote comes back in writing with materials and labor itemized (from the research brief, not the owner)",
+          "question": "Do you visit the property for every estimate, and do customers get a written, itemized quote?",
+          "where": "hero chip 'Quotes in writing', process step 2, FAQ 1, estimate section 'What happens next'"
+        },
+        {
+          "fact": "Estimates are free",
+          "question": "Are your estimates always free, including for small repair jobs?",
+          "where": "site-wide 'Free estimate' buttons, ticker, FAQ 1"
+        },
+        {
+          "fact": "A typical residential fence run takes one to three days (from the research brief)",
+          "question": "How long does a typical residential fence install take you from start to finish?",
+          "where": "process step 4, FAQ 5"
+        },
+        {
+          "fact": "D & D Fence checks city permit and HOA requirements for the customer's address (from the research brief)",
+          "question": "Do you check permit and HOA rules for customers, and do you pull the city fence permit yourselves in Ennis and Waxahachie?",
+          "where": "process step 3, FAQ 2"
+        },
+        {
+          "fact": "Warranty terms are given in writing with the estimate (no warranty length is stated on the page)",
+          "question": "What warranty do you offer on workmanship and on each material, and for how long?",
+          "where": "FAQ 5"
+        },
+        {
+          "fact": "Service radius of about 25 miles from Ennis and Waxahachie (taken from the SEO target radius in the build plan)",
+          "question": "How far from Ennis and Waxahachie will you travel for a job, and which other towns do you work in most?",
+          "where": "hero answer, proof strip, services intro, FAQ 6, estimate section"
+        },
+        {
+          "fact": "Fence installation covers farm and acreage properties, and gates are built as part of new installs (from the SEO keyword list, not the owner)",
+          "question": "Do you build farm/ranch fencing (barbed wire, field fence, pipe fence) and install gates, including automatic gates?",
+          "where": "hero answer, ticker 'Farm & acreage fencing', fence installation card, about paragraph 2"
+        },
+        {
+          "fact": "Which wood the privacy fences use (cedar, pressure-treated pine, or both) and whether steel posts or concrete footings are standard",
+          "question": "What wood do you use for privacy fences, and how do you set posts in the local clay (concrete, steel posts, depth)?",
+          "where": "material guide table and the 'posts carry it' note (left out of the copy until confirmed)"
+        },
+        {
+          "fact": "Who does the work: the owner on site or a crew (Google reviews mention 'Austin and his crew' and 'the actual owners come out')",
+          "question": "Does Austin come out for estimates and installs, and how big is the crew?",
+          "where": "about section (left general until confirmed)"
+        },
+        {
+          "fact": "Licensing and insurance status (not in intake, so not on the page)",
+          "question": "Is D & D Fence insured (general liability), and do you hold any licenses or certifications you want shown?",
+          "where": "hero chips, proof strip"
+        },
+        {
+          "fact": "Base city and business entity details are blank in intake",
+          "question": "Which town is D & D Fence based in, and what is the business entity type and state of formation (for the Terms page)?",
+          "where": "hero eyebrow, schema address, legal pages"
+        }
+      ]
+    }
+  ],
+  "consolidate": []
+}

@@ -1,0 +1,80 @@
+/* ==========================================================================
+   includes/area-page.css — additions for /service-areas/ pages (Phase 6, 2026-10-19).
+   Inlined AFTER includes/service-page.css in each area page's own <style> block (the .sp-* skeleton is reused).
+   Tokens only (var()).
+   ========================================================================== */
+
+/* ---------- Schematic maps (inline SVG, drawn from published distances; not to scale unless captioned) ---------- */
+.ap-map { margin: 0; padding: var(--space-5) var(--space-5) var(--space-4); background: var(--color-surface); border: 1px solid var(--color-line); border-radius: var(--radius-lg); box-shadow: var(--shadow); }
+.ap-map svg { width: 100%; height: auto; display: block; }
+.ap-map figcaption { margin-top: var(--space-3); font-size: .88rem; line-height: 1.5; color: var(--color-ink-2); }
+.ap-map .m-ring { fill: color-mix(in srgb, var(--color-accent) 7%, transparent); stroke: var(--color-accent); stroke-width: 2; stroke-dasharray: 8 7; }
+.ap-map .m-ring--2 { fill: color-mix(in srgb, var(--color-secondary) 8%, transparent); stroke: var(--color-secondary); }
+.ap-map .m-road { fill: none; stroke: var(--color-ink-2); stroke-width: 3; stroke-linecap: round; opacity: .55; }
+.ap-map .m-road--minor { stroke-width: 2; stroke-dasharray: 2 6; opacity: .5; }
+.ap-map .m-water { fill: color-mix(in srgb, var(--color-secondary) 24%, transparent); stroke: var(--color-secondary); stroke-width: 1.5; }
+.ap-map .m-link { stroke: var(--color-ink); stroke-width: 1.5; stroke-dasharray: 4 4; }
+.ap-map .m-dot { fill: var(--color-ink); }
+.ap-map .m-dot--home { fill: var(--color-accent); stroke: var(--color-white); stroke-width: 3; }
+.ap-map .m-dot--out { fill: var(--color-surface); stroke: var(--color-muted); stroke-width: 2; }
+.ap-map text { paint-order: stroke; stroke: var(--color-surface); stroke-width: 5px; stroke-linejoin: round; }
+.ap-map .m-label { font-family: var(--font-accent); font-weight: 700; font-size: 15px; letter-spacing: .1em; fill: var(--color-ink); }
+.ap-map .m-label--big { font-size: 18px; }
+.ap-map .m-label--muted { fill: var(--color-muted); font-size: 12.5px; font-weight: 600; }
+.ap-map .m-label--accent { fill: var(--color-accent-dark); }
+
+/* ---------- Rule sheet (permit checklist table) ---------- */
+.ap-sheet .sp-table { min-width: 720px; }
+.ap-sheet .sp-table tbody th { width: 21%; }
+.ap-sheet .sp-table td:nth-child(2) { color: var(--color-ink); }
+.ap-sheet .sp-table td:nth-child(3) { color: var(--color-ink-2); }
+.ap-tag { display: inline-block; margin-bottom: var(--space-1); padding: 1px var(--space-2); border-radius: var(--radius-sm); font-family: var(--font-accent); font-weight: 700; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; background: color-mix(in srgb, var(--color-accent) 14%, transparent); color: var(--color-accent-dark); }
+
+/* ---------- Fact list (compact ruled list used beside the maps) ---------- */
+.ap-facts { display: grid; gap: 0; margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--color-line); }
+.ap-facts li { display: grid; grid-template-columns: minmax(0, 8.5rem) minmax(0, 1fr); gap: var(--space-4); padding: var(--space-3) 0; border-bottom: 1px solid var(--color-line); font-size: .95rem; color: var(--color-ink-2); }
+.ap-facts b { font-family: var(--font-accent); font-weight: 700; font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; color: var(--color-accent-dark); padding-top: 2px; }
+@media (max-width: 560px) { .ap-facts li { grid-template-columns: 1fr; gap: var(--space-1); } }
+
+/* ---------- Town cards (hub) ---------- */
+.ap-towns { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: var(--space-6); align-items: stretch; margin: 0; padding: 0; list-style: none; }
+.ap-town { position: relative; display: grid; gap: var(--space-3); align-content: start; padding: var(--space-8) var(--space-8) var(--space-6); border-radius: var(--radius-lg); border: 1px solid var(--color-line); box-shadow: var(--shadow); overflow: hidden; scroll-margin-top: calc(var(--nav-height) + var(--space-6)); }
+.ap-town:nth-child(1) { background: var(--color-card-tint-3); }
+.ap-town:nth-child(2) { background: var(--color-card-tint-1); margin-top: var(--space-8); }
+.ap-town::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 6px; background: repeating-linear-gradient(90deg, var(--color-accent) 0 22px, var(--color-accent-dark) 22px 26px); }
+.ap-town h3 { font-size: clamp(1.4rem, 1.1rem + 1vw, 1.9rem); }
+.ap-town p { margin: 0; color: var(--color-ink-2); }
+.ap-town__meta { display: flex; flex-wrap: wrap; gap: var(--space-2); margin: 0; padding: 0; list-style: none; }
+.ap-town__meta li { padding: var(--space-1) var(--space-3); border-radius: var(--radius-full); border: 1px solid var(--color-line); background: var(--color-surface); font-size: .82rem; font-weight: 600; color: var(--color-ink-2); }
+.ap-town .btn { justify-self: start; margin-top: var(--space-2); }
+@media (max-width: 860px) { .ap-towns { grid-template-columns: 1fr; } .ap-town:nth-child(2) { margin-top: 0; } }
+
+/* ---------- Next-town strip ---------- */
+.ap-next { background: var(--color-paper-2); padding-block: clamp(2rem, 4vw, 3rem); }
+.ap-next__inner { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: var(--space-5) var(--space-8); align-items: center; padding: var(--space-6) var(--space-8); border-radius: var(--radius-lg); background: var(--color-surface); border: 1px solid var(--color-line); box-shadow: var(--shadow-sm); }
+.ap-next h2 { font-size: clamp(1.15rem, 1rem + .7vw, 1.5rem); text-wrap: balance; }
+.ap-next p { margin: var(--space-2) 0 0; color: var(--color-ink-2); max-width: 60ch; }
+@media (max-width: 720px) { .ap-next__inner { grid-template-columns: 1fr; padding: var(--space-6); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .ap-town { transition: none; }
+}
+
+/* Dark bands: inline links in prose stay readable */
+.sp-expert .prose a { color: var(--color-accent-bright); text-decoration-color: color-mix(in srgb, var(--color-accent-bright) 55%, transparent); }
+.sp-expert .prose a:hover { color: var(--color-white); }
+.ap-reviews-link { margin: var(--space-6) 0 0; font-size: .95rem; color: color-mix(in srgb, var(--color-white) 78%, transparent); }
+.ap-reviews-link a { color: var(--color-accent-bright); font-weight: 600; text-decoration: underline; text-underline-offset: .18em; }
+
+/* ---------- Rule sheet on phones: each row becomes a labelled block instead of a sideways-scrolling table ---------- */
+@media (max-width: 700px) {
+  .ap-sheet .table-scroll { overflow: visible; }
+  .ap-sheet .sp-table { min-width: 0; display: block; }
+  .ap-sheet .sp-table thead { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); border: 0; }
+  .ap-sheet .sp-table tbody, .ap-sheet .sp-table tr, .ap-sheet .sp-table th, .ap-sheet .sp-table td { display: block; }
+  .ap-sheet .sp-table tr { padding: var(--space-5); border-bottom: 1px solid var(--color-line); }
+  .ap-sheet .sp-table tbody tr:last-child { border-bottom: 0; }
+  .ap-sheet .sp-table th, .ap-sheet .sp-table td, .ap-sheet .sp-table tbody th { width: auto; padding: 0; border: 0; }
+  .ap-sheet .sp-table tbody th { margin-bottom: var(--space-2); }
+  .ap-sheet .sp-table td::before { content: attr(data-label); display: block; margin: var(--space-3) 0 var(--space-1); font-family: var(--font-accent); font-weight: 700; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--color-accent-dark); }
+}

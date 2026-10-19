@@ -427,6 +427,14 @@ $servicesHubBuilt = pageBuilt('/services/');
 @media (prefers-reduced-motion: reduce) {
   .home-services .service-card__icon, .material-table tbody tr { transition: none; }
 }
+
+/* ---------- From the Blog (Phase 6): latest registry post as a featured card ---------- */
+.home-blog { background: var(--color-paper-2); }
+.home-blog .section-head { display: grid; gap: var(--space-3); max-width: 62ch; margin-bottom: clamp(1.5rem, 3vw, 2.25rem); }
+.home-blog .section-head h2 { text-wrap: balance; }
+.home-blog .section-head p { margin: 0; color: var(--color-ink-2); }
+.home-blog .blog-feature { box-shadow: var(--shadow); background: var(--color-card-tint-3); }
+.home-blog__more { margin-top: var(--space-6); display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3) var(--space-6); }
 </style>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php'; ?>
 
@@ -720,6 +728,23 @@ if ($homeReviews !== ''): ?>
     <p class="faq-more">Have a question that is not here? Call <?php echo phoneLink(); ?> or email <?php echo emailLink(); ?>.</p>
   </div>
 </section>
+
+<!-- ============ FROM THE BLOG (registry-driven: latest post) ============ -->
+<?php $blogPosts = blogLoad(); if ($blogPosts): ?>
+<section class="section home-blog" aria-labelledby="blog-title">
+  <div class="container">
+    <div class="section-head reveal-up">
+      <span class="eyebrow">From the Blog</span>
+      <h2 id="blog-title">What should Ennis and Waxahachie owners read before building a <span class="text-accent">fence</span>?</h2>
+      <p>Read the latest fence guide before you build: it gives plain answers on what a fence costs, why posts lean in Ellis County clay and which city rules apply in Ennis and Waxahachie.</p>
+    </div>
+    <?php echo blogCard($blogPosts[0], 'blog-feature reveal-up'), "\n"; ?>
+    <div class="home-blog__more">
+      <a class="btn btn-secondary" href="/blog/">View All Articles →</a>
+    </div>
+  </div>
+</section>
+<?php endif; ?>
 
 <!-- ============ ESTIMATE SECTION (full form) ============ -->
 <section class="section home-estimate texture-grain edge-wave-top" id="estimate" aria-labelledby="estimate-title">

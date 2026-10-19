@@ -376,6 +376,117 @@
           "where": "FAQ answers"
         }
       ]
+    },
+    {
+      "path": "/service-areas/",
+      "useful_because": "The service areas hub shows Ennis and Waxahachie owners, on one drawn-to-scale schematic, that D & D Fence covers both towns (15 miles apart on US 287) and about 25 miles around each, then sends them to the right town page. A side-by-side table compares the two towns on where they sit, what each City publishes about fence permits, the ground and the older homes. No other page puts the two towns' rules next to each other.",
+      "needs_confirmation": [
+        {
+          "fact": "Service radius of about 25 miles around both Ennis and Waxahachie (from the SEO target radius in the build plan, not from the owner)",
+          "question": "How far from Ennis and Waxahachie will you travel, and are there towns you do not serve?",
+          "where": "hub hero, coverage schematic, FAQ 1-2, both town pages"
+        }
+      ]
+    },
+    {
+      "path": "/service-areas/ennis/",
+      "useful_because": "The Ennis page explains what Blackland Prairie clay does to fence posts, using USDA's description of the Ellis clay (cracks that stay open 120 to 150 days in most years), then ties Ennis specifics to fence decisions: Kachina Prairie, the railroad-era older blocks, the Templeton-McCanless historic homes, Lake Bardwell acreage and who to call at the City of Ennis about permits. A road-distance schematic shows which nearby towns fall inside the service radius. A Waxahachie or out-of-area page carries none of this.",
+      "needs_confirmation": [
+        {
+          "fact": "Which town D & D Fence is based in (intake has no city; one Google review says the crew 'drove down from Ennis to Waco', which suggests Ennis, but it is not confirmed)",
+          "question": "Which town is D & D Fence based in?",
+          "where": "Ennis page is written as a service-area page, with no base-city claim; hero eyebrow, schema address, 'why us' band"
+        },
+        {
+          "fact": "The City of Ennis page lists only fences over 8 feet as needing a permit; no Ennis fence height or setback rules were found online",
+          "question": "Do you know the Ennis fence rules (height, setback, permit) from jobs there, and do you check them for customers?",
+          "where": "permit bento card, FAQ 1"
+        },
+        {
+          "fact": "Farm and acreage fencing, including barbed-wire or field fence, is offered (from the SEO keyword list, not the owner)",
+          "question": "Do you build farm/ranch fence out toward Lake Bardwell and along SH 34?",
+          "where": "Lake Bardwell bento card, FAQ 3"
+        },
+        {
+          "fact": "Whether the Templeton-McCanless historic district has any City review for fences (not found; the page only says to ask the City)",
+          "question": "Have you fenced homes in the Ennis historic district, and was extra review required?",
+          "where": "historic homes bento card, FAQ 4"
+        },
+        {
+          "fact": "Crew size and whether Austin is on site (reviews say 'Austin and his crew')",
+          "question": "Who comes to the estimate and the build in Ennis?",
+          "where": "'Why call us' band"
+        }
+      ]
+    },
+    {
+      "path": "/service-areas/waxahachie/",
+      "useful_because": "The Waxahachie page puts the City of Waxahachie's published residential fence permit checklist (8-foot cap, metal posts at set gauge and spacing on privacy fences, open low fences in front yards, vehicle gates set back 20 feet, at least 10 working days of review) beside a plain-language reading of each rule, then walks through a permit-aware job timeline. It adds Waxahachie specifics: the 1897 courthouse, Gingerbread City's five historic districts, rapid growth and HOAs, and the three highways. It is the only page on the site with the City's actual rules.",
+      "needs_confirmation": [
+        {
+          "fact": "Who prepares and files the Waxahachie fence permit (the page tells the reader to settle it at the estimate and does not say D & D Fence does it)",
+          "question": "Do you prepare the site plan and file the City of Waxahachie fence permit for customers, and is the permit fee in your quote?",
+          "where": "permit timeline step 2, FAQ 4, hero answer ('planned around the City's checklist')"
+        },
+        {
+          "fact": "Metal posts are required by the City for privacy fences; how D & D Fence sets posts (steel or wood, concrete, depth) is not stated",
+          "question": "How do you build privacy fences to the Waxahachie metal-post rule (13-gauge posts at most 8 feet apart, or 15-gauge at most 6 feet), and how are they set in the clay?",
+          "where": "rules sheet 'Posts & rails' row, timeline step 4, cost article"
+        },
+        {
+          "fact": "The City's checklist (revision dated 05/24) is the version read; the City says the Unified Development Code controls",
+          "question": "Has the City changed the fence permit rules since 2024, and have you seen anything different on a recent job?",
+          "where": "rules sheet footer, FAQ 1"
+        },
+        {
+          "fact": "Which Waxahachie neighborhoods or subdivisions the company has fenced (none named; the page makes no frequency claim)",
+          "question": "Which Waxahachie neighborhoods do you want named, and are there HOAs you know well?",
+          "where": "'city adding neighbors' bento card"
+        }
+      ]
+    },
+    {
+      "path": "/blog/",
+      "useful_because": "The blog index lists the two launch guides from D & D Fence for Ellis County owners, one on what moves a fence quote and one on why posts lean in Blackland clay, grouped by topic, with an estimate form after the first article so a reader can ask for a number without leaving the page.",
+      "needs_confirmation": [
+        {
+          "fact": "No blog photos exist yet; cards use a decorative fence-board panel instead of an image",
+          "question": "Can you send job photos (ideally with the town) so each article gets a real featured image?",
+          "where": "blog cards, featured block, homepage 'From the Blog' card, BlogPosting image"
+        }
+      ]
+    },
+    {
+      "path": "/blog/what-drives-fence-cost-ellis-county/",
+      "useful_because": "This guide explains the six things that move a fence quote in Ellis County (material, height, gates, ground, old-fence removal, permits) and what an itemized estimate should list. It adds the local rules that change a quote: Waxahachie's metal-post requirement and 8-foot cap, and the City of Ennis permit threshold. It gives no dollar figures because none are on file.",
+      "needs_confirmation": [
+        {
+          "fact": "No per-foot price ranges are published (intake has none, so the article gives none)",
+          "question": "What are your typical per-linear-foot ranges for a 6-foot cedar privacy fence, chain link and wrought iron right now, and may we publish them?",
+          "where": "'How is a fence priced?' section, material table"
+        },
+        {
+          "fact": "The on-site visit and written quote are free; a surveyor is a separate cost",
+          "question": "Is the estimate free for every job, including small repairs, and is anything else (permit fee, survey) outside it?",
+          "where": "FAQ 1, itemized-estimate section"
+        },
+        {
+          "fact": "Typical residential build time of one to three days (from the research brief)",
+          "question": "How long does a typical run take you?",
+          "where": "itemized-estimate list"
+        }
+      ]
+    },
+    {
+      "path": "/blog/why-fence-posts-lean-ellis-county-clay/",
+      "useful_because": "This guide explains why posts lean in Ellis County using USDA's Ellis clay description (cracks more than 12 inches deep that stay open 120 to 150 days in most years), lists the early signs of a moving post, and gives a table of what to check after dry spells, heavy rain and wind. It also covers when a repair is enough and how the Waxahachie metal-post rule and the Ennis ground differ.",
+      "needs_confirmation": [
+        {
+          "fact": "One observation from D & D Fence's own jobs is missing; the article is built from public soil and city sources only",
+          "question": "What do you see most often when you reset a leaning post here, and what do you do about it (post depth, concrete, steel)?",
+          "where": "'Can a leaning post be fixed' section"
+        }
+      ]
     }
   ],
   "consolidate": []

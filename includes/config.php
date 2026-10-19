@@ -70,7 +70,7 @@ $services = [
      'keywords' => ['fence installation', 'fence contractor', 'gate installation', 'farm fencing', 'agricultural fencing']],
 ];
 
-// ---- Service areas (Premium: /areas/{slug}/ per town) -----------------------------------------
+// ---- Service areas (Premium: /service-areas/{slug}/ per town) -----------------------------------------
 $serviceAreas = ['Ennis, TX', 'Waxahachie, TX'];
 $areaPages = [
     ['slug' => 'ennis',      'name' => 'Ennis',      'state' => 'TX'],
@@ -144,7 +144,7 @@ $companyPhoneE164  = $phoneE164;
 $companyAddress    = 'Serving Ennis and Waxahachie, TX';   // address_public is false — a service area, never a street
 $legalUpdated      = 'October 19, 2026';               // fixed date of the last edit to the legal pages — bump when their text changes
 
-$cssVersion = '5';      // the SINGLE framework.css cache-bust; bump here on every framework.css / critical.css change
+$cssVersion = '7';      // the SINGLE framework.css cache-bust; bump here on every framework.css / critical.css change
 
 // ---- Lead attribution (first-touch cookie + p1_attribution_fields()) — must stay last, before any output ----
 require_once __DIR__ . '/attribution.php';

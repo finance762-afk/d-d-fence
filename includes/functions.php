@@ -50,12 +50,12 @@ if (!function_exists('pageBuilt')) {
 
 if (!function_exists('areaHref')) {
     /**
-     * Link for one service area. /areas/{slug}/ once that page directory exists; otherwise the
+     * Link for one service area. /service-areas/{slug}/ once that page directory exists; otherwise the
      * /service-areas/ hub anchor when the hub is built; otherwise null (render the town as plain text).
      */
     function areaHref(string $area): ?string {
         $fnSlug = getAreaSlug($area);
-        if (is_dir($_SERVER['DOCUMENT_ROOT'] . '/areas/' . $fnSlug)) return '/areas/' . $fnSlug . '/';
+        if (is_file($_SERVER['DOCUMENT_ROOT'] . '/service-areas/' . $fnSlug . '/index.php')) return '/service-areas/' . $fnSlug . '/';
         if (pageBuilt('/service-areas/')) return '/service-areas/#' . $fnSlug;
         return null;
     }
@@ -440,7 +440,7 @@ if (!function_exists('serviceLink')) {
             }
         }
         $fnLabel = h($label !== '' ? $label : $slug);
-        return pageBuilt('/services/' . $slug . '/') ? '<a href="/services/' . h($slug) . '/">' . $fnLabel . '</a>' : $fnLabel;
+        return pageBuilt('/services/' . $slug . '/') ? '<a href="' . h('/' . implode('/', ['services', $slug]) . '/') . '">' . $fnLabel . '</a>' : $fnLabel;
     }
 }
 
@@ -564,5 +564,188 @@ if (!function_exists('serviceBySlug')) {
         }
         trigger_error('Unknown service slug: ' . $slug, E_USER_WARNING);
         return ['name' => $slug, 'slug' => $slug, 'description' => ''];
+    }
+}
+
+
+// ── Service area pages + blog (Phase 6) ─────────────────────
+
+if (!function_exists('areaPageSchema')) {
+    /**
+     * One @graph for /service-areas/{slug}/: WebPage (speakable) + Service (provider = homepage #organization, areaServed = this town)
+     * + the business @id restated with areaServed for this town only (same @id as head.php's node, so it merges — it is not a second business)
+     * + BreadcrumbList, plus FAQPage only when the page shows real FAQs.
+     * $town: ['slug','name','wiki' (optional Wikipedia URL for sameAs)]. $faqs: raw Q/A list.
+     */
+    function areaPageSchema(array $town, string $pageName, string $description, array $faqs = []): array {
+        global $siteUrl, $siteName;
+        $fnBase = rtrim((string) $siteUrl, '/');
+        $fnUrl  = $fnBase . '/service-areas/' . $town['slug'] . '/';
+        $fnCity = ['@type' => 'City', 'name' => $town['name'], 'containedInPlace' => ['@type' => 'State', 'name' => 'Texas']];
+        if (!empty($town['wiki'])) $fnCity['sameAs'] = $town['wiki'];
+        $fnCrumbs = generateBreadcrumbSchema([
+            ['name' => 'Home', 'url' => '/'],
+            ['name' => 'Service Areas', 'url' => '/service-areas/'],
+            ['name' => $town['name'] . ', TX', 'url' => '/service-areas/' . $town['slug'] . '/'],
+        ]);
+        unset($fnCrumbs['@context']);
+        $fnCrumbs['@id'] = $fnUrl . '#breadcrumb';
+        $fnGraph = [
+            [
+                '@type'      => 'WebPage',
+                '@id'        => $fnUrl . '#webpage',
+                'url'        => $fnUrl,
+                'name'       => $pageName,
+                'isPartOf'   => ['@id' => $fnBase . '/#website'],
+                'about'      => ['@id' => $fnUrl . '#service'],
+                'breadcrumb' => ['@id' => $fnCrumbs['@id']],
+                'speakable'  => ['@type' => 'SpeakableSpecification', 'cssSelector' => ['h1', '.hero-answer', '.answer-block']],
+            ],
+            [
+                '@type'       => 'Service',
+                '@id'         => $fnUrl . '#service',
+                'name'        => 'Fence installation and repair in ' . $town['name'] . ', TX',
+                'serviceType' => 'Fence installation',
+                'description' => $description,
+                'url'         => $fnUrl,
+                'provider'    => ['@id' => $fnBase . '/#organization'],
+                'areaServed'  => $fnCity,
+            ],
+            [
+                '@type'      => 'HomeAndConstructionBusiness',
+                '@id'        => $fnBase . '/#organization',
+                'name'       => $siteName,
+                'url'        => $fnBase . '/',
+                'areaServed' => $fnCity,
+            ],
+            $fnCrumbs,
+        ];
+        if ($faqs) {
+            $fnFaq = generateFAQSchema($faqs);
+            unset($fnFaq['@context']);
+            $fnFaq['@id'] = $fnUrl . '#faq';
+            $fnGraph[] = $fnFaq;
+        }
+        return ['@context' => 'https://schema.org', '@graph' => $fnGraph];
+    }
+}
+
+if (!function_exists('blogLoad')) {
+    /** The blog registry (includes/blog-data.php, newest first). Safe to call from any scope. */
+    function blogLoad(): array {
+        $blogPosts = [];
+        require $_SERVER['DOCUMENT_ROOT'] . '/includes/blog-data.php';
+        return $blogPosts;
+    }
+}
+
+if (!function_exists('blogPostBySlug')) {
+    function blogPostBySlug(string $slug): array {
+        foreach (blogLoad() as $fnPost) {
+            if ($fnPost['slug'] === $slug) return $fnPost;
+        }
+        trigger_error('Unknown blog slug: ' . $slug, E_USER_WARNING);
+        return [];
+    }
+}
+
+if (!function_exists('blogCard')) {
+    /**
+     * One registry post as a .blog-card. Posts with a real image file use it; posts without one get the typographic
+     * fence-board art panel (decorative, aria-hidden) — never a missing or hotlinked image.
+     */
+    function blogCard(array $post, string $class = ''): string {
+        $fnRoot = rtrim($_SERVER['DOCUMENT_ROOT'] ?? '', '/');
+        $fnHasImg = !empty($post['image']) && is_file($fnRoot . $post['image']);
+        $fnHref = '/blog/' . $post['slug'] . '/';
+        $fnOut  = '<a class="blog-card' . ($class !== '' ? ' ' . h($class) : '') . '" href="' . h($fnHref) . '">';
+        if ($fnHasImg) {
+            $fnOut .= sprintf('<div class="blog-card__image"><img src="%s" alt="%s" width="960" height="600" loading="lazy" decoding="async"></div>', h($post['image']), h($post['alt'] ?? ''));
+        } else {
+            $fnOut .= '<div class="blog-card__art" aria-hidden="true"><span>' . h($post['category']) . '</span></div>';
+        }
+        $fnOut .= '<div class="blog-card__body">'
+                . '<span class="blog-card__category">' . h($post['category']) . '</span>'
+                . '<h3 class="blog-card__title">' . h($post['title']) . '</h3>'
+                . '<p class="blog-card__excerpt">' . h($post['excerpt']) . '</p>'
+                . '<span class="blog-card__meta"><time datetime="' . h($post['dateISO']) . '">' . h($post['date']) . '</time> · ' . h($post['readtime']) . '</span>'
+                . '<span class="blog-card__cta">Read Article →</span>'
+                . '</div></a>';
+        return $fnOut;
+    }
+}
+
+if (!function_exists('blogPostSchema')) {
+    /**
+     * @graph for /blog/{slug}/: BlogPosting (author = Page One Insights LLC, publisher = the client #organization)
+     * + BreadcrumbList (Home → Blog → Post) + FAQPage mirroring the visible FAQ ($faqNode = generateFAQSchema($faqs), built by the post).
+     */
+    function blogPostSchema(array $post, array $keywords, array $faqNode = []): array {
+        global $siteUrl;
+        $fnBase = rtrim((string) $siteUrl, '/');
+        $fnUrl  = $fnBase . '/blog/' . $post['slug'] . '/';
+        $fnRoot = rtrim($_SERVER['DOCUMENT_ROOT'] ?? '', '/');
+        $fnPosting = [
+            '@type'            => 'BlogPosting',
+            '@id'              => $fnUrl . '#article',
+            'headline'         => $post['title'],
+            'description'      => $post['excerpt'],
+            'datePublished'    => $post['dateISO'],
+            'dateModified'     => $post['dateISO'],
+            'keywords'         => implode(', ', $keywords),
+            'articleSection'   => $post['category'],
+            'inLanguage'       => 'en-US',
+            'mainEntityOfPage' => $fnUrl,
+            'author'           => ['@type' => 'Organization', 'name' => 'Page One Insights LLC', 'url' => 'https://pageoneinsights.com'],
+            'publisher'        => ['@id' => $fnBase . '/#organization'],
+        ];
+        if (!empty($post['image']) && is_file($fnRoot . $post['image'])) $fnPosting['image'] = absoluteUrl($post['image']);
+        $fnCrumbs = generateBreadcrumbSchema([
+            ['name' => 'Home', 'url' => '/'],
+            ['name' => 'Blog', 'url' => '/blog/'],
+            ['name' => $post['title'], 'url' => '/blog/' . $post['slug'] . '/'],
+        ]);
+        unset($fnCrumbs['@context']);
+        $fnGraph = [$fnPosting, $fnCrumbs];
+        if ($faqNode) {   // the post passes generateFAQSchema($faqs) — a FAQPage node mirroring its visible FAQ
+            unset($faqNode['@context']);
+            $fnGraph[] = $faqNode;
+        }
+        return ['@context' => 'https://schema.org', '@graph' => $fnGraph];
+    }
+}
+
+if (!function_exists('blogRelatedServicesHtml')) {
+    /** "Related Services" block for a post: links to service pages that exist, both service-area pages, and contact. */
+    function blogRelatedServicesHtml(array $serviceSlugs): string {
+        $fnOut = '<section class="blog-post__related-services" aria-labelledby="related-services-title"><h2 id="related-services-title">Related fence services</h2><ul>';
+        foreach ($serviceSlugs as $fnSlug) {
+            if (!pageBuilt('/services/' . $fnSlug . '/')) continue;
+            $fnSvc = serviceBySlug($fnSlug);
+            $fnOut .= '<li><a href="' . h('/' . implode('/', ['services', $fnSlug]) . '/') . '">' . h($fnSvc['name']) . '</a></li>';
+        }
+        foreach (['Ennis, TX', 'Waxahachie, TX'] as $fnArea) {
+            $fnHref = areaHref($fnArea);
+            if ($fnHref !== null) $fnOut .= '<li><a href="' . h($fnHref) . '">Fence contractor in ' . h(cityFromArea($fnArea)[0]) . '</a></li>';
+        }
+        if (pageBuilt('/contact/')) $fnOut .= '<li><a href="/contact/">Contact D &amp; D Fence</a></li>';
+        return $fnOut . '</ul></section>';
+    }
+}
+
+if (!function_exists('blogRelatedArticlesHtml')) {
+    /** "Related Articles" block: up to $max registry cards, same category first, then newest; never the current post. */
+    function blogRelatedArticlesHtml(string $currentSlug, int $max = 3): string {
+        $fnCurrent = blogPostBySlug($currentSlug);
+        $fnSame = $fnOther = [];
+        foreach (blogLoad() as $fnPost) {
+            if ($fnPost['slug'] === $currentSlug) continue;
+            if (($fnPost['category'] ?? '') === ($fnCurrent['category'] ?? '')) $fnSame[] = $fnPost; else $fnOther[] = $fnPost;
+        }
+        $fnPicked = array_slice(array_merge($fnSame, $fnOther), 0, $max);
+        if (!$fnPicked) return '';
+        $fnOut = '<section class="blog-post__related-articles" aria-labelledby="related-articles-title"><h2 id="related-articles-title">Related articles</h2><div class="blog-grid">';
+        foreach ($fnPicked as $fnPost) $fnOut .= blogCard($fnPost);
+        return $fnOut . '</div></section>';
     }
 }

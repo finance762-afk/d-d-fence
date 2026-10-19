@@ -8,8 +8,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
  * Left out on purpose: the "Insurance Claim Work" clause (fence work is not insurance restoration), and licence / insurance /
  * workers' comp statements (none are in intake). Governing law uses the operating state (Texas) because state of formation is unknown.
  */
-$pageTitle       = 'Terms of Service | ' . $siteName;
-$pageDescription = 'The terms that apply to the ' . $siteName . ' website and to its fence estimates, installations and repairs in Ennis, Waxahachie and Ellis County, Texas.';
+$pageTitle       = 'Terms of Service | ' . $siteName . ', Ennis & Waxahachie, TX';
+$pageDescription = 'The terms for the ' . $siteName . ' website and its fence estimates, installations and repairs in Ennis, Waxahachie and Ellis County, Texas. Read them here.';
 $canonicalUrl    = $siteUrl . '/terms/';
 $ogImage         = defaultOgImage();
 $currentPage     = 'terms';

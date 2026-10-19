@@ -18,8 +18,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
  */
 $bpPost         = blogPostBySlug('why-fence-posts-lean-ellis-county-clay');
 $bpOther        = blogPostBySlug('what-drives-fence-cost-ellis-county');
-$pageTitle      = $bpPost['title'];
-$pageDescription = 'Blackland Prairie clay swells and cracks with the weather and moves fence posts. See the signs of a leaning post, what to check in Ellis County, and when repair beats rebuild.';
+$pageTitle      = 'Why Fence Posts Lean in Ellis County\'s Blackland Clay';
+$pageDescription = 'Blackland Prairie clay swells and cracks, and it moves fence posts. Learn the signs of a leaning post, what to check first, and when repair beats rebuild.';
 $canonicalUrl   = $siteUrl . '/blog/' . $bpPost['slug'] . '/';
 $ogImage        = !empty($bpPost['image']) && is_file($_SERVER['DOCUMENT_ROOT'] . $bpPost['image']) ? $bpPost['image'] : defaultOgImage();
 $currentPage    = 'blog';

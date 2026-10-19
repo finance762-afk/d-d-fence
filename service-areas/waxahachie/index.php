@@ -32,7 +32,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
  */
 $waTown = ['slug' => 'waxahachie', 'name' => 'Waxahachie', 'wiki' => 'https://en.wikipedia.org/wiki/Waxahachie,_Texas'];
 
-$pageTitle       = 'Fence Contractor in Waxahachie, TX | Permit Rules | ' . $siteName;
+$pageTitle       = 'Fence Contractor in Waxahachie, TX | Permits | ' . $siteName;
 $pageDescription = 'D & D Fence installs and repairs privacy, cedar, chain link and wrought iron fences in Waxahachie, TX, planned around the City\'s permit rules. (469) 321-7783.';
 $canonicalUrl    = $siteUrl . '/service-areas/waxahachie/';
 $ogImage         = defaultOgImage();
@@ -175,6 +175,8 @@ $waCards   = serviceCards();
           <input type="hidden" name="form_location" value="hero">
           <input type="hidden" name="consent_version" value="v2.1">
           <input type="hidden" name="consent_page" value="<?php echo htmlspecialchars($_SERVER['REQUEST_URI']); ?>">
+          <input type="hidden" name="_consent_version" value="v2.1">
+          <input type="hidden" name="_consent_page" value="<?php echo htmlspecialchars($_SERVER['REQUEST_URI']); ?>">
           <?php echo p1_attribution_fields('hero'); ?>
           <div class="form-row"><label class="sr-only" for="hero-name">Name</label><input id="hero-name" type="text" name="name" placeholder="Name" autocomplete="name" required></div>
           <div class="form-row"><label class="sr-only" for="hero-phone">Phone</label><input id="hero-phone" type="tel" name="phone" placeholder="Phone" autocomplete="tel" required></div>

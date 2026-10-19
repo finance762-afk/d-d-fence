@@ -11,7 +11,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
  * Credentials block therefore points to the Google Business Profile reviews, the one verifiable record. Questions for the owner: /content-confirmations.json.
  * Section order: hero → story + plan drawing → cta-band (mid-page form) → approach cards → facts band (dark) → Google proof → closing CTA.
  */
-$pageTitle       = 'About ' . $siteName . ' | Fence Contractor in Ennis & Waxahachie, TX';
+$pageTitle       = 'About ' . $siteName . ' | Fence Contractor, Ennis & Waxahachie';
 $pageDescription = $siteName . ' is a fence contractor owned by ' . $ownerName . ', building and repairing privacy, cedar, chain link and wrought iron fences near Ennis and Waxahachie.';
 $canonicalUrl    = $siteUrl . '/about/';
 $ogImage         = defaultOgImage();

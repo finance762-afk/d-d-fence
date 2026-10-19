@@ -9,7 +9,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
  * facts intake does not hold (licence, insurance, warranty length, financing, prices) are not stated. FAQPage schema is an
  * AI-comprehension aid only (rich results were deprecated May 2026). One mid-page cta-band after the first category — no hero form on FAQ.
  */
-$pageTitle       = 'Fence Questions Answered | Ennis & Waxahachie, TX | ' . $siteName;
+$pageTitle       = 'Fence Questions Answered | Ennis & Waxahachie | ' . $siteName;
 $pageDescription = 'Straight answers on fence cost, permits, property lines, materials, repairs and timing from D & D Fence, serving Ennis, Waxahachie and Ellis County, TX.';
 $canonicalUrl    = $siteUrl . '/faq/';
 $ogImage         = defaultOgImage();

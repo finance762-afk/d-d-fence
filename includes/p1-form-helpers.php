@@ -20,6 +20,9 @@ if (!function_exists('p1_lead_hidden_fields')) {
         $out .= '<input type="hidden" name="form_location" value="' . $h($formId) . '">' . "\n";
         $out .= '<input type="hidden" name="consent_version" value="v2.1">' . "\n";
         $out .= '<input type="hidden" name="consent_page" value="' . $h($_SERVER['REQUEST_URI'] ?? '/') . '">' . "\n";
+        // The leads endpoint reads the underscore-prefixed pair into consent_records; the plain pair is kept for the notification email.
+        $out .= '<input type="hidden" name="_consent_version" value="v2.1">' . "\n";
+        $out .= '<input type="hidden" name="_consent_page" value="' . $h($_SERVER['REQUEST_URI'] ?? '/') . '">' . "\n";
         foreach ($extra as $k => $v) {
             $out .= '<input type="hidden" name="' . $h($k) . '" value="' . $h($v) . '">' . "\n";
         }

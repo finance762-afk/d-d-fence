@@ -12,7 +12,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
  * Coatings, gauges and heights D & D Fence stocks are unconfirmed — the page explains them as general facts only.
  */
 $svc            = serviceBySlug('chain-link');
-$pageTitle      = 'Chain Link Fence Installation in Ennis & Waxahachie, TX | ' . $siteName;
+$pageTitle      = 'Chain Link Fencing in Ennis & Waxahachie, TX | ' . $siteName;
 $pageDescription = 'Chain link fencing from D & D Fence for backyards, dog runs, side yards and property perimeters in Ennis, Waxahachie and Ellis County. Call (469) 321-7783.';
 $canonicalUrl   = $siteUrl . '/services/chain-link/';
 $ogImage        = defaultOgImage();
@@ -216,6 +216,8 @@ $clRelated = ['fence-installation', 'wrought-iron', 'fence-repair'];
           <input type="hidden" name="form_location" value="hero">
           <input type="hidden" name="consent_version" value="v2.1">
           <input type="hidden" name="consent_page" value="<?php echo htmlspecialchars($_SERVER['REQUEST_URI']); ?>">
+          <input type="hidden" name="_consent_version" value="v2.1">
+          <input type="hidden" name="_consent_page" value="<?php echo htmlspecialchars($_SERVER['REQUEST_URI']); ?>">
           <?php echo p1_attribution_fields('hero'); ?>
           <div class="form-row"><label class="sr-only" for="hero-name">Name</label><input id="hero-name" type="text" name="name" placeholder="Name" autocomplete="name" required></div>
           <div class="form-row"><label class="sr-only" for="hero-phone">Phone</label><input id="hero-phone" type="tel" name="phone" placeholder="Phone" autocomplete="tel" required></div>

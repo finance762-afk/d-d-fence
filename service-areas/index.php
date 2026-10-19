@@ -10,8 +10,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
  * ennis/ and waxahachie/ page headers; the hub restates only facts those pages carry. The hub has no hero form
  * (the lead-form placement rule covers home, service and city pages); the estimate dialog opens from the buttons.
  */
-$pageTitle       = 'Fence Service Areas: Ennis, Waxahachie & 25 Miles | ' . $siteName;
-$pageDescription = 'D & D Fence builds and repairs fences in Ennis and Waxahachie, TX and within about 25 miles. See each town\'s fence rules and request an estimate. (469) 321-7783.';
+$pageTitle       = 'Fence Service Areas: Ennis & Waxahachie, TX | ' . $siteName;
+$pageDescription = 'D & D Fence builds and repairs fences in Ennis and Waxahachie, TX and within about 25 miles. See each town\'s fence rules and request an estimate today.';
 $canonicalUrl    = $siteUrl . '/service-areas/';
 $ogImage         = defaultOgImage();
 $currentPage     = 'service-areas';

@@ -11,7 +11,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
  * Cedar grade, board size, post type and stain products are not in intake — see /content-confirmations.json.
  */
 $svc             = serviceBySlug('cedar-fence');
-$pageTitle       = 'Cedar Fence Installation in Ennis & Waxahachie, TX | ' . $siteName;
+$pageTitle       = 'Cedar Fences in Ennis & Waxahachie, TX | ' . $siteName;
 $pageDescription = 'Cedar fences by D & D Fence in Ennis, Waxahachie and nearby Ellis County towns: how cedar compares with pine, natural or stained finish. Call (469) 321-7783.';
 $canonicalUrl    = $siteUrl . '/services/cedar-fence/';
 $ogImage         = defaultOgImage();
@@ -219,6 +219,8 @@ $cfRelated = ['privacy-fence', 'fence-repair', 'fence-installation'];
           <input type="hidden" name="form_location" value="hero">
           <input type="hidden" name="consent_version" value="v2.1">
           <input type="hidden" name="consent_page" value="<?php echo htmlspecialchars($_SERVER['REQUEST_URI']); ?>">
+          <input type="hidden" name="_consent_version" value="v2.1">
+          <input type="hidden" name="_consent_page" value="<?php echo htmlspecialchars($_SERVER['REQUEST_URI']); ?>">
           <?php echo p1_attribution_fields('hero'); ?>
           <div class="form-row"><label class="sr-only" for="hero-name">Name</label><input id="hero-name" type="text" name="name" placeholder="Name" autocomplete="name" required></div>
           <div class="form-row"><label class="sr-only" for="hero-phone">Phone</label><input id="hero-phone" type="tel" name="phone" placeholder="Phone" autocomplete="tel" required></div>

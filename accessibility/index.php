@@ -7,8 +7,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
  * /accessibility/ — Accessibility Statement (Phase 5, 2026-10-19). Adapted from ~/crm/references/legal-compliance.md.
  * The feature list names only what this build ships (skip link, landmarks, focus ring, labelled fields, reduced-motion CSS, native dialog).
  */
-$pageTitle       = 'Accessibility Statement | ' . $siteName;
-$pageDescription = $siteName . ' aims to meet WCAG 2.1 Level AA on this website. See the accessibility features in place and how to report a barrier or ask for help.';
+$pageTitle       = 'Accessibility Statement | ' . $siteName . ', Ennis & Waxahachie';
+$pageDescription = $siteName . ' aims to meet WCAG 2.1 Level AA on its website. See the accessibility features in place, known limits, and how to report a barrier or ask for help.';
 $canonicalUrl    = $siteUrl . '/accessibility/';
 $ogImage         = defaultOgImage();
 $currentPage     = 'accessibility';

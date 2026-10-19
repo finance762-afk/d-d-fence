@@ -12,8 +12,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
  * Map: integrations.gbp_map_embed is null and address_public is false, so no map iframe and no directions button are printed;
  * the .map-embed block below renders itself the moment config.php gets a gbp['embed_src'].
  */
-$pageTitle       = 'Contact ' . $siteName . ' | Free Fence Estimate, Ennis & Waxahachie';
-$pageDescription = 'Call ' . $phone . ' or send the form for a free fence estimate from ' . $siteName . ' in Ennis, Waxahachie and Ellis County, TX. Open Monday to Friday, 7 AM to 6 PM.';
+$pageTitle       = 'Contact ' . $siteName . ' | Fence Estimates, Ennis & Waxahachie';
+$pageDescription = 'Call ' . $phone . ' or send the form to request a fence estimate from ' . $siteName . ' in Ennis, Waxahachie and Ellis County. Open Monday to Friday, 7 AM to 6 PM.';
 $canonicalUrl    = $siteUrl . '/contact/';
 $ogImage         = defaultOgImage();
 $currentPage     = 'contact';
@@ -202,7 +202,7 @@ $schemaMarkup = ['@context' => 'https://schema.org', '@graph' => [
         <p>The fence type, a rough length and the town are enough to get started. Photos can wait for the call.</p>
 
         <form action="<?php echo h($formAction); ?>" method="POST" class="estimate-form">
-          <?php echo p1_lead_hidden_fields('contact', ['_consent_version' => 'v2.1', '_consent_page' => $_SERVER['REQUEST_URI'] ?? '/']); ?>
+          <?php echo p1_lead_hidden_fields('contact'); ?>
           <input type="text" name="_honeypot" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
 
           <div class="form-grid">

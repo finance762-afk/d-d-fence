@@ -9,8 +9,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
  * cookie-notice localStorage flag (main.js), and Google Analytics 4 once a real measurement ID replaces the placeholder in config.php.
  * Fonts are self-hosted and there is no map or widget embed, so neither is listed as a cookie source.
  */
-$pageTitle       = 'Cookie Policy | ' . $siteName;
-$pageDescription = 'The cookies and browser storage the ' . $siteName . ' fence website in Ennis and Waxahachie, TX uses, what each one does, and how to block or delete them.';
+$pageTitle       = 'Cookie Policy | ' . $siteName . ', Ennis & Waxahachie, TX';
+$pageDescription = 'The cookies and browser storage the ' . $siteName . ' fence website in Ennis and Waxahachie, TX uses, what each does, and how to block or delete them in your browser.';
 $canonicalUrl    = $siteUrl . '/cookie-policy/';
 $ogImage         = defaultOgImage();
 $currentPage     = 'cookie-policy';

@@ -13,8 +13,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
  */
 $bpPost         = blogPostBySlug('what-drives-fence-cost-ellis-county');
 $bpOther        = blogPostBySlug('why-fence-posts-lean-ellis-county-clay');
-$pageTitle      = $bpPost['title'];
-$pageDescription = 'A fence in Ellis County is priced by the linear foot. See how material, height, gates, clay ground, old-fence removal and city permits move an Ennis or Waxahachie quote.';
+$pageTitle      = 'What Drives the Cost of a Fence in Ellis County, Texas?';
+$pageDescription = 'Fences in Ellis County are priced by the linear foot. See how material, height, gates, clay ground and permits move an Ennis or Waxahachie fence quote.';
 $canonicalUrl   = $siteUrl . '/blog/' . $bpPost['slug'] . '/';
 $ogImage        = !empty($bpPost['image']) && is_file($_SERVER['DOCUMENT_ROOT'] . $bpPost['image']) ? $bpPost['image'] : defaultOgImage();
 $currentPage    = 'blog';

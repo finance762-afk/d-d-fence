@@ -10,7 +10,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
  * are skipped until photos exist. Facts the page wanted but intake lacks are listed in /content-confirmations.json.
  */
 $svc            = serviceBySlug('privacy-fence');
-$pageTitle      = 'Privacy Fence Installation in Ennis & Waxahachie, TX | ' . $siteName;
+$pageTitle      = 'Privacy Fences in Ennis & Waxahachie, TX | ' . $siteName;
 $pageDescription = 'Privacy fences from D & D Fence for backyards in Ennis, Waxahachie and Ellis County: height, board layout and gates planned to your lot. Call (469) 321-7783.';
 $canonicalUrl   = $siteUrl . '/services/privacy-fence/';
 $ogImage        = defaultOgImage();
@@ -184,6 +184,8 @@ $pfRelated = ['cedar-fence', 'fence-installation', 'fence-repair'];
           <input type="hidden" name="form_location" value="hero">
           <input type="hidden" name="consent_version" value="v2.1">
           <input type="hidden" name="consent_page" value="<?php echo htmlspecialchars($_SERVER['REQUEST_URI']); ?>">
+          <input type="hidden" name="_consent_version" value="v2.1">
+          <input type="hidden" name="_consent_page" value="<?php echo htmlspecialchars($_SERVER['REQUEST_URI']); ?>">
           <?php echo p1_attribution_fields('hero'); ?>
           <div class="form-row"><label class="sr-only" for="hero-name">Name</label><input id="hero-name" type="text" name="name" placeholder="Name" autocomplete="name" required></div>
           <div class="form-row"><label class="sr-only" for="hero-phone">Phone</label><input id="hero-phone" type="tel" name="phone" placeholder="Phone" autocomplete="tel" required></div>

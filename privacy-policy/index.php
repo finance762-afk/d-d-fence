@@ -8,7 +8,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
  * Facts that are not in intake (entity type, state of formation, street address) are NOT printed; see config.php "Legal / company identity".
  * Formsubmit.co is retired: forms post to the Page One leads endpoint, so that is the processor this policy discloses.
  */
-$pageTitle       = 'Privacy Policy | ' . $siteName;
+$pageTitle       = 'Privacy Policy | ' . $siteName . ', Ennis & Waxahachie, TX';
 $pageDescription = 'How ' . $siteName . ' collects, uses and protects the information you send through its fence estimate forms, phone calls and website in Ennis and Waxahachie, TX.';
 $canonicalUrl    = $siteUrl . '/privacy-policy/';
 $ogImage         = defaultOgImage();

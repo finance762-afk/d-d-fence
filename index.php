@@ -13,7 +13,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
  * Every fact traces to build-plan.json / config.php; facts the page wanted but intake lacks are in /content-confirmations.json.
  */
 $pageTitle       = 'Fence Contractor in Ennis & Waxahachie, TX | ' . $siteName;
-$pageDescription = 'D & D Fence builds and repairs privacy, cedar, chain link and wrought iron fences within 25 miles of Ennis and Waxahachie, TX. Call (469) 321-7783.';
+$pageDescription = 'D & D Fence builds and repairs privacy, cedar, chain link and wrought iron fences within 25 miles of Ennis and Waxahachie, TX. Call (469) 321-7783 for pricing.';
 $canonicalUrl    = $siteUrl . '/';
 $ogImage         = defaultOgImage();          // '' until an OG image or logo is staged
 $currentPage     = 'home';
@@ -479,6 +479,8 @@ $servicesHubBuilt = pageBuilt('/services/');
           <input type="hidden" name="form_location" value="hero">
           <input type="hidden" name="consent_version" value="v2.1">
           <input type="hidden" name="consent_page" value="<?php echo htmlspecialchars($_SERVER['REQUEST_URI']); ?>">
+          <input type="hidden" name="_consent_version" value="v2.1">
+          <input type="hidden" name="_consent_page" value="<?php echo htmlspecialchars($_SERVER['REQUEST_URI']); ?>">
           <?php echo p1_attribution_fields('hero'); ?>
           <div class="form-row"><label class="sr-only" for="hero-name">Name</label><input id="hero-name" type="text" name="name" placeholder="Name" autocomplete="name" required></div>
           <div class="form-row"><label class="sr-only" for="hero-phone">Phone</label><input id="hero-phone" type="tel" name="phone" placeholder="Phone" autocomplete="tel" required></div>
@@ -762,6 +764,8 @@ if ($homeReviews !== ''): ?>
           <input type="hidden" name="form_location" value="estimate-section">
           <input type="hidden" name="consent_version" value="v2.1">
           <input type="hidden" name="consent_page" value="<?php echo htmlspecialchars($_SERVER['REQUEST_URI']); ?>">
+          <input type="hidden" name="_consent_version" value="v2.1">
+          <input type="hidden" name="_consent_page" value="<?php echo htmlspecialchars($_SERVER['REQUEST_URI']); ?>">
           <?php echo p1_attribution_fields('estimate-section'); ?>
 
           <div class="form-grid">

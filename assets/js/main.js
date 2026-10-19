@@ -90,10 +90,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Close nav when clicking a link
     navLinks.querySelectorAll('a').forEach(function(link) {
       link.addEventListener('click', function() {
-        navLinks.classList.remove('active');
-        hamburger.classList.remove('active');
-        hamburger.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
+        setOpen(false); /* full close: the old inline version left body.menu-open (overflow:hidden) set, so the page stayed locked after the menu's Free Estimate link opened the dialog */
       });
     });
   }

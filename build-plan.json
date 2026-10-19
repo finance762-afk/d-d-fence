@@ -86,13 +86,18 @@
     "recommended_hero_image": null
   },
   "design": {
-    "fonts": {},
+    "fonts": {
+      "heading": "Newsreader",
+      "body": "Source Sans 3",
+      "accent": "Barlow Condensed"
+    },
     "notes": "",
     "style": "modern",
     "colors": {
       "extracted_from_logo": true
     },
-    "logo_analysis": {}
+    "logo_analysis": {},
+    "archetype": "rustic"
   },
   "domain": "d-d-fence",
   "phases": [

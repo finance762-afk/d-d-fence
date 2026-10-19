@@ -312,6 +312,70 @@
           "where": "pre-dig checklist item 2, process step 4, 'What's included' list"
         }
       ]
+    },
+    {
+      "path": "/about/",
+      "useful_because": "Tells an owner who D & D Fence is (owned by Austin Dunnahue, 6 years, Ennis and Waxahachie), how an estimate runs, and where the verifiable record lives (Google reviews). Uses an inline plan drawing instead of a photo.",
+      "needs_confirmation": [
+        {
+          "fact": "No job-site photos on file; the story split uses a plan drawing",
+          "question": "Can you send 2-3 original photos of finished fences (and one of you or the crew) for the About page?",
+          "where": "story split"
+        },
+        {
+          "fact": "No licence, insurance, certification or association memberships in intake, so none are shown",
+          "question": "Do you hold any licence, insurance, BBB or manufacturer credentials we can list with a verification link?",
+          "where": "About credentials block"
+        },
+        {
+          "fact": "No dated company history in intake, so there is no timeline (a four-fact band is used instead)",
+          "question": "What year did D & D Fence start, and are there milestones worth a timeline (first gate job, farm work, etc.)?",
+          "where": "About page"
+        }
+      ]
+    },
+    {
+      "path": "/contact/",
+      "useful_because": "Full estimate form with unbundled consent boxes, hours board with live open/closed line, service-area panel.",
+      "needs_confirmation": [
+        {
+          "fact": "No GBP map embed and address is not public, so no map iframe or directions button",
+          "question": "Do you want a public address/map shown, and can you send the Google Maps embed code?",
+          "where": "service-area panel"
+        }
+      ]
+    },
+    {
+      "path": "/privacy-policy/ /terms/ /cookie-policy/ /accessibility/",
+      "useful_because": "Four legal pages adapted from the Page One templates for a Texas fence contractor.",
+      "needs_confirmation": [
+        {
+          "fact": "Entity type and state of formation are blank in intake; Terms use Texas / Ellis County as governing law and venue",
+          "question": "Is D & D Fence an LLC, corporation or sole proprietorship, and in which state was it formed?",
+          "where": "Terms, Privacy intro ($companyEntityType in config.php)"
+        },
+        {
+          "fact": "No public mailing address",
+          "question": "Is there a mailing address to list for privacy requests?",
+          "where": "legal contact blocks ($companyAddress in config.php)"
+        },
+        {
+          "fact": "Google Analytics ID is still the placeholder; cookie policy describes GA4 as 'when switched on'",
+          "question": "What is the client's GA4 measurement ID?",
+          "where": "Cookie Policy, config.php"
+        }
+      ]
+    },
+    {
+      "path": "/faq/",
+      "useful_because": "18 answers in four categories, reusing facts already on the homepage and service pages.",
+      "needs_confirmation": [
+        {
+          "fact": "Texas811 locate step, 'estimate is free', and gate/farm answers repeat claims from earlier pages that came from research, not the owner",
+          "question": "Please confirm: free estimates, utility locate before digging, and which gate types (including automatic) you install.",
+          "where": "FAQ answers"
+        }
+      ]
     }
   ],
   "consolidate": []

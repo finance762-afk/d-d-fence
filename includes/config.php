@@ -131,7 +131,20 @@ $textUsNumber   = '';   // integrations.text_us_number is null (accepts_sms fals
 $financing      = [];   // integrations.financing is null
 $serviceZips    = [];   // integrations.service_zips not provided
 
-$cssVersion = '3';      // the SINGLE framework.css cache-bust; bump here on every framework.css / critical.css change
+// ---- Legal / company identity (Phase 5 legal pages) -------------------------------------------
+// build-plan holds NO entity type, state of formation or street address, so none is invented here. Fill these in at onboarding
+// (content-confirmations.json asks the question); the legal pages print them only when non-empty.
+$companyName       = $siteName;                        // "D & D Fence" — add the entity suffix once known
+$companyEntityType = '';                               // e.g. 'Limited Liability Company' — UNKNOWN in intake, left blank
+$companyState      = 'Texas';                          // operating state (build-plan description: "serving Ennis and Waxahachie, TX"); state of formation UNCONFIRMED
+$companyCounty     = 'Ellis County';                   // Ennis and Waxahachie are both in Ellis County (Terms venue clause)
+$companyEmail      = $email;
+$companyPhone      = $phone;
+$companyPhoneE164  = $phoneE164;
+$companyAddress    = 'Serving Ennis and Waxahachie, TX';   // address_public is false — a service area, never a street
+$legalUpdated      = 'October 19, 2026';               // fixed date of the last edit to the legal pages — bump when their text changes
+
+$cssVersion = '5';      // the SINGLE framework.css cache-bust; bump here on every framework.css / critical.css change
 
 // ---- Lead attribution (first-touch cookie + p1_attribution_fields()) — must stay last, before any output ----
 require_once __DIR__ . '/attribution.php';

@@ -65,6 +65,253 @@
           "where": "hero eyebrow, schema address, legal pages"
         }
       ]
+    },
+    {
+      "path": "/services/privacy-fence/",
+      "useful_because": "This page helps an Ennis or Waxahachie owner decide whether and how to build a privacy fence: a drawing shows how 4, 6 and 8-foot fences sit against an adult's eye line next door, a table compares the three common board layouts (side-by-side, board-on-board, shadowbox) on privacy, look from each side, wind and board count, and the copy explains why wind load and Blackland clay make the post line the part that fails first on a solid fence here. It lists what the job includes, walks through the four build steps, answers four privacy-specific questions (cost factors, permits/HOA rules including which side faces out, build time, property line), and shows live Google reviews from backyard fence customers that mention low spots, rounded corners and move-in deadlines. None of that is on the homepage or the other service pages.",
+      "needs_confirmation": [
+        {
+          "fact": "Which privacy board layouts D & D Fence builds (side-by-side, board-on-board, shadowbox)",
+          "question": "Which privacy fence layouts do you build: side-by-side, board-on-board, shadowbox, or others?",
+          "where": "board layout comparison table (presented as a general guide until confirmed)"
+        },
+        {
+          "fact": "Privacy fence heights offered (the drawing shows 4, 6 and 8 ft as a general guide)",
+          "question": "What heights do you build privacy fences at, and is 8 feet an option?",
+          "where": "sightline drawing caption, 'Is it time for one?' section"
+        },
+        {
+          "fact": "Old fence removal and haul-off is part of a replacement job (from the research brief's cost factors)",
+          "question": "When a new fence replaces an old one, do you tear out and haul off the old fence, and is that priced separately?",
+          "where": "'What's included' list, FAQ 1"
+        },
+        {
+          "fact": "Buried utility lines are located before digging (two Google reviewers say this was done; not stated by the owner as a standard step)",
+          "question": "Do you request a Texas811 utility locate before every job?",
+          "where": "process step 3"
+        },
+        {
+          "fact": "Who Paul is (Google reviewers name 'Austin and Paul' as the people who did the work)",
+          "question": "What is Paul's role (co-owner, crew lead?), and may we name him on the site?",
+          "where": "expert section point 'Austin on the job'"
+        },
+        {
+          "fact": "How posts are set for privacy fences in the local clay (concrete footings, steel posts, depth) — left out of the copy",
+          "question": "How do you set privacy fence posts here (wood or steel posts, concrete, how deep)?",
+          "where": "expert section paragraph on wind and clay (would add a concrete method detail)"
+        }
+      ]
+    },
+    {
+      "path": "/services/",
+      "useful_because": "The services hub lists all six D & D Fence services in one place with what each is for, then gives a 'start with the job' matrix that sends an owner from the problem they have (keep a dog in, close off a backyard, fence a pool, a leaning section, a new run with a wide gate) to the page that answers it. It summarizes the four-step job process that applies to every service and shows the live Google reviews, so a visitor can choose the right page without reading all six.",
+      "needs_confirmation": [
+        {
+          "fact": "Buried utility lines are located before digging on every job (from two Google reviews, not the owner)",
+          "question": "Do you request a Texas811 utility locate before every job?",
+          "where": "process step 4 'Build'"
+        }
+      ]
+    },
+    {
+      "path": "/services/cedar-fence/",
+      "useful_because": "This page helps an Ennis or Waxahachie homeowner decide between cedar and pressure-treated pine with a line-by-line table (where rot resistance comes from, warping as boards dry, weight, look, when each can be stained, relative cost). It shows how bare cedar changes color over time versus stained cedar, explains why posts and gates decide how long a cedar fence lasts on Blackland clay, and says what a D & D Fence cedar job includes and in what order. It pulls in real Google reviews that mention staining, sturdy building and materials, and answers the cost, lifespan, HOA stain color and timing questions owners ask before choosing cedar.",
+      "needs_confirmation": [
+        {
+          "fact": "Which cedar is used (species, grade) and board size",
+          "question": "What cedar do you use for fence boards (for example Western red cedar or another kind, which grade), and what board size?",
+          "where": "comparison table, scope list (left out of the copy)"
+        },
+        {
+          "fact": "Post type on cedar fences (cedar, treated pine or steel; concrete footings)",
+          "question": "On a cedar fence, what posts do you set (cedar, treated pine or steel), and are they set in concrete?",
+          "where": "table footnote (described only as general practice), process step 3"
+        },
+        {
+          "fact": "D & D Fence stains or seals cedar fences (shown only by one Google review saying 'beautifully stained')",
+          "question": "Do you stain or seal new cedar fences as part of the job? Which products and colors do you offer, and how long after the build do you stain?",
+          "where": "hero chip 'Natural or stained finish', scope list, process step 5, expert section"
+        },
+        {
+          "fact": "Staining or resealing an existing fence as a standalone job",
+          "question": "Will you stain or reseal an existing fence you didn't build?",
+          "where": "color-over-time strip footnote"
+        },
+        {
+          "fact": "Cedar costs more than pressure-treated pine (general fact; no D & D prices)",
+          "question": "Do you have a typical per-foot price range for cedar versus pine fencing you'd like shown?",
+          "where": "comparison table, FAQ 1"
+        },
+        {
+          "fact": "Old fence tear-out and haul-off is included when cedar replaces it",
+          "question": "Do you remove and haul off the old fence, and is that priced separately?",
+          "where": "scope answer and list"
+        },
+        {
+          "fact": "Wider gates for a mower or trailer",
+          "question": "What gate widths do you build on wood fences, including double drive gates?",
+          "where": "scope list"
+        }
+      ]
+    },
+    {
+      "path": "/services/chain-link/",
+      "useful_because": "A property owner weighing chain link gets what no sibling page covers: a labeled drawing of how a chain link fence goes together and why the terminal posts at ends, corners and gates carry the load (and why one shifting corner post in Blackland clay makes the fabric sag), a plain comparison of galvanized and black vinyl-coated finishes, a gauge guide that explains the backward numbering and the core-versus-coated gauge trap, why open mesh rides out North Texas wind while privacy slats turn it into a sail, the five-step order a chain link run is built in, the jobs chain link suits best (dogs, long property lines, kept views, side yards and equipment, kids' play areas), and real Google reviews from customers who fenced for dogs and a canine training facility.",
+      "needs_confirmation": [
+        {
+          "fact": "Which chain link finishes D & D Fence installs (galvanized, black or green vinyl-coated)",
+          "question": "Do you install both galvanized and black vinyl-coated chain link, and any other colors?",
+          "where": "finish comparison table (presented as general information only)"
+        },
+        {
+          "fact": "Wire gauges and fence heights offered for chain link",
+          "question": "Which chain link wire gauges (9, 11, 11.5) and heights do you usually install, and which do you recommend for big dogs?",
+          "where": "gauge guide table and copy (presented as general information only)"
+        },
+        {
+          "fact": "Whether terminal posts are set in concrete or deeper footings than line posts, and the post sizes used",
+          "question": "How do you set chain link terminal and line posts in local clay (concrete, depth, post diameter)?",
+          "where": "anatomy caption and process step 3 (written as general practice)"
+        },
+        {
+          "fact": "Privacy slats offered for chain link",
+          "question": "Do you add privacy slats to chain link fences?",
+          "where": "anatomy section wind paragraph (slats mentioned generally, not offered)"
+        },
+        {
+          "fact": "Chain link for long perimeters and acreage/farm properties",
+          "question": "Do you build chain link on acreage and farm properties, and do you have chain link jobs you would like featured?",
+          "where": "uses bento 'Long property lines'"
+        },
+        {
+          "fact": "Double drive gates hung on chain link runs",
+          "question": "Do you build and hang double drive gates on chain link fences?",
+          "where": "included list"
+        },
+        {
+          "fact": "No chain-link-specific reviews or photos exist",
+          "question": "Can you send photos of finished chain link jobs (with the town), and point us to any customers whose reviews were about chain link?",
+          "where": "proof section and page imagery"
+        }
+      ]
+    },
+    {
+      "path": "/services/wrought-iron/",
+      "useful_because": "This page explains what a wrought iron fence actually is today (mostly powder-coated or painted ornamental steel, compared with true wrought iron and aluminum in a table) and the pool-barrier numbers an iron pool fence is checked against (48 in height, 4-in sphere, 2-in bottom gap, self-closing gates that swing outward, 54-in latch, tighter pickets when rails are under 45 in apart), with a drawing and a note to confirm with Ennis or Waxahachie inspections. It shows where iron fits on a property (front yards and Waxahachie historic districts, pools, deck drop-offs, security perimeters), why iron needs exact post spacing, and the Google-review evidence for D & D Fence's iron work: a run of about 500 ft with an automatic gate and a repeat hire, a steel fence with 3 gates and about 250 ft chosen over three other bids, and a pool and deck job finished in a day and a half.",
+      "needs_confirmation": [
+        {
+          "fact": "Which metal and finish D & D Fence installs (ornamental steel, galvanized under powder coat, aluminum, true wrought iron)",
+          "question": "When customers ask for wrought iron, what do you install: powder-coated steel, galvanized steel, aluminum? And what picket gauge and finish is standard?",
+          "where": "material table foot note, hero answer ('ornamental steel')"
+        },
+        {
+          "fact": "Pool barriers are built to the city's pool code, including self-closing and self-latching gate hardware",
+          "question": "Do you build pool fences to pass city inspection, supply self-closing hinges and latches, and handle the pool-barrier permit or inspection in Ennis and Waxahachie?",
+          "where": "pool barrier section, scope list ('pool-gate hardware where required'), FAQ 3"
+        },
+        {
+          "fact": "Picket top styles, heights and colors offered",
+          "question": "Which iron picket tops (flat, spear, finial), heights and colors can customers choose from?",
+          "where": "process step 2, scope list"
+        },
+        {
+          "fact": "Panels are stepped or racked to follow sloped ground",
+          "question": "On sloped yards, do you step the iron panels or rack them to follow the grade?",
+          "where": "scope list, process step 4"
+        },
+        {
+          "fact": "Automatic gate openers are installed on iron drive gates (evidenced by one Google review)",
+          "question": "Do you supply and install automatic gate openers yourselves, and which brands?",
+          "where": "uses card 'Security perimeters', evidence band"
+        },
+        {
+          "fact": "Utilities are located before digging on iron jobs (evidenced by Google reviews on other jobs)",
+          "question": "Do you request a Texas811 utility locate before every job?",
+          "where": "process step 3"
+        },
+        {
+          "fact": "Typical iron install time of one to three days (research brief)",
+          "question": "How long does a typical residential wrought iron fence take you to install?",
+          "where": "FAQ 4"
+        }
+      ]
+    },
+    {
+      "path": "/services/fence-repair/",
+      "useful_because": "A property owner with a damaged fence gets a symptom finder table that matches what they see (leaning section, sagging gate, loose boards, storm damage, loose chain link, gap under the fence) to the likely cause and the usual fix. They also get plain repair-or-replace criteria based on the posts, why the ground line and Ellis County's black clay loosen and rot posts, why gates sag and how each cause is fixed, the four steps of a repair visit, and live Google reviews showing D & D Fence coming back for warranty storm repairs and a next-day gate fix. The homepage and the other service pages cover none of this.",
+      "needs_confirmation": [
+        {
+          "fact": "Warranty terms on repairs and on new fences (one review mentions free storm repair as warranty work; length and coverage are unknown)",
+          "question": "What warranty do you give on repair work, and how long does your workmanship warranty on new fences last?",
+          "where": "FAQ 'Is a fence repair covered by a warranty?' (left general)"
+        },
+        {
+          "fact": "Whether D & D Fence repairs fences built by other companies",
+          "question": "Do you repair fences that another company built, or only your own?",
+          "where": "hero answer, symptom finder (left out)"
+        },
+        {
+          "fact": "Which materials and repairs are taken on (wood, chain link retensioning, iron/steel welding, sliding gates and gate openers)",
+          "question": "Which repairs do you take on: wood, chain link, iron or steel (including welding), sliding gates and gate openers?",
+          "where": "'On a repair visit' list, gate cards"
+        },
+        {
+          "fact": "Minimum repair job size and whether small repairs get a free estimate",
+          "question": "Is there a minimum size for a repair job, and are estimates free for small repairs like one post or a gate?",
+          "where": "hero form card, CTA button 'Get a Free Fence Repair Estimate'"
+        },
+        {
+          "fact": "How quickly a repair visit can be scheduled (no response time is stated)",
+          "question": "How soon can you usually get out to look at a repair, and do you take storm-damage calls first?",
+          "where": "repair visit steps, CTA (left out)"
+        },
+        {
+          "fact": "Repair pricing: written price before work starts (from the research brief); no price ranges given",
+          "question": "Do you give repair prices in writing on site, and is there a typical starting price for common repairs like resetting a post?",
+          "where": "repair visit step 3, FAQ 1"
+        },
+        {
+          "fact": "Old boards and debris hauled away after a repair",
+          "question": "Do you haul off old posts, boards and debris after a repair?",
+          "where": "'On a repair visit' list (left out)"
+        }
+      ]
+    },
+    {
+      "path": "/services/fence-installation/",
+      "useful_because": "This page is the planning guide for a new fence rather than a material page. It lists the five things to settle before the first post hole (property line from the plat or survey, a Texas811 utility locate, city and HOA rules, where each gate goes, removing the old fence). It has a gate planner comparing walk, double drive, sliding and automatic gates by use, space needed and what to plan before the build, with a drawing of swing clearance against sliding clearance. A short material picker sends the reader to the right material page. The process shows how a D & D Fence install runs, and gate jobs from real Google reviews (a sliding gate, an automatic gate with about 500 ft of wrought iron, a very large gate with an opener) appear as evidence.",
+      "needs_confirmation": [
+        {
+          "fact": "Automatic gate openers are installed, but brands, power options (hard-wired or solar) and who runs the electrical are unknown",
+          "question": "Which gate openers do you install, do you offer solar or hard-wired power, and who runs power to the gate post?",
+          "where": "gate planner table (Automatic gate row), hero chip 'Swing, sliding & automatic gates'"
+        },
+        {
+          "fact": "Gate widths and hardware offered (walk gates, double drive gates, drop rods, sliding gate tracks or rollers) are not in intake",
+          "question": "What gate widths and gate types do you usually build, and do you build cantilever or track sliding gates?",
+          "where": "gate planner table, sheet footnote"
+        },
+        {
+          "fact": "Farm and acreage fencing is in config, but the fence types are unknown (no barbed wire, field fence or pipe fence named on the page)",
+          "question": "What farm or ranch fence types do you install (barbed wire, field fence, pipe fence, pipe gates)?",
+          "where": "hero answer ('homes and farm properties'), double drive gate row ('pasture'), automatic gate row ('long rural drives')"
+        },
+        {
+          "fact": "Old fence tear-out and haul-off is described as part of the job (from the research brief cost factor)",
+          "question": "Do you tear out and haul off the old fence yourselves, and is that priced separately?",
+          "where": "pre-dig checklist item 5, 'What's included' list"
+        },
+        {
+          "fact": "The quote is revised in writing before the work when upgrades are added (inferred from a review saying pricing stayed fair after changes)",
+          "question": "When a customer adds upgrades after the quote, do you send a revised written quote before starting?",
+          "where": "process step 3"
+        },
+        {
+          "fact": "D & D Fence (not the customer) submits the Texas811 locate request",
+          "question": "Do you place the Texas811 utility locate request on every job, or should the homeowner?",
+          "where": "pre-dig checklist item 2, process step 4, 'What's included' list"
+        }
+      ]
     }
   ],
   "consolidate": []

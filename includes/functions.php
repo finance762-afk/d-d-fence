@@ -455,3 +455,114 @@ if (!function_exists('estimateLink')) {
         return '<a class="' . h($class) . '" href="/contact/" data-open-estimate>' . $label . '</a>';
     }
 }
+
+// ── Service pages (Phase 4) ─────────────────────────────────
+
+if (!function_exists('serviceReviews')) {
+    /**
+     * Real Google reviews for one service page: the Page One feed (google-reviews.php — server-side, cached on disk)
+     * filtered to reviews whose text matches $pattern (a case-insensitive regex body, e.g. 'iron|steel|pool').
+     * Text is never hard-coded or edited; the page prints it escaped, exactly as written on Google.
+     * Returns ['reviews' => [...], 'rating' => float|null, 'count' => int, 'url' => string] or null when the feed is
+     * unreachable or nothing matches (the page then drops its proof section — fail-quiet, like p1_google_reviews()).
+     */
+    function serviceReviews(string $pattern, int $limit = 3): ?array {
+        global $slug;
+        require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/google-reviews.php';
+        $fnFeed = p1_google_reviews_data($slug, 30, 4);
+        if (!$fnFeed || empty($fnFeed['reviews'])) return null;
+        $fnHits = [];
+        foreach ($fnFeed['reviews'] as $fnRev) {
+            $fnText = (string) ($fnRev['text'] ?? '');
+            if ($fnText === '' || !preg_match('/' . str_replace('/', '\/', $pattern) . '/i', $fnText)) continue;
+            $fnHits[] = $fnRev;
+            if (count($fnHits) >= $limit) break;
+        }
+        if (!$fnHits) return null;
+        return [
+            'reviews' => $fnHits,
+            'rating'  => isset($fnFeed['rating']) ? (float) $fnFeed['rating'] : null,
+            'count'   => (int) ($fnFeed['review_count'] ?? count($fnFeed['reviews'])),
+            'url'     => (string) ($fnFeed['reviews_url'] ?? ($GLOBALS['gbp']['url'] ?? '')),
+        ];
+    }
+}
+
+if (!function_exists('servicePageSchema')) {
+    /**
+     * One @graph for a service page: WebPage (speakable → .hero-answer / .answer-block) + Service (#service-{slug},
+     * provider = the homepage #organization) + BreadcrumbList, plus FAQPage only when the page shows real FAQs
+     * ($faqs: the page's generateFAQSchema() node, or a raw Q/A list).
+     */
+    function servicePageSchema(array $service, string $pageName, string $description, array $faqs = [], array $extra = []): array {
+        global $siteUrl;
+        $fnBase  = rtrim((string) $siteUrl, '/');
+        $fnUrl   = $fnBase . '/services/' . $service['slug'] . '/';
+        $fnSvc   = generateServiceSchema($service);
+        unset($fnSvc['@context']);
+        $fnSvc['@id']         = $fnUrl . '#service-' . $service['slug'];
+        $fnSvc['description'] = $description;
+        $fnSvc = array_merge($fnSvc, $extra);
+        $fnCrumbs = generateBreadcrumbSchema([
+            ['name' => 'Home', 'url' => '/'],
+            ['name' => 'Services', 'url' => '/services/'],
+            ['name' => $service['name'], 'url' => '/services/' . $service['slug'] . '/'],
+        ]);
+        unset($fnCrumbs['@context']);
+        $fnCrumbs['@id'] = $fnUrl . '#breadcrumb';
+        $fnGraph = [
+            [
+                '@type'      => 'WebPage',
+                '@id'        => $fnUrl . '#webpage',
+                'url'        => $fnUrl,
+                'name'       => $pageName,
+                'isPartOf'   => ['@id' => $fnBase . '/#website'],
+                'about'      => ['@id' => $fnSvc['@id']],
+                'breadcrumb' => ['@id' => $fnCrumbs['@id']],
+                'speakable'  => ['@type' => 'SpeakableSpecification', 'cssSelector' => ['h1', '.hero-answer', '.answer-block']],
+            ],
+            $fnSvc,
+            $fnCrumbs,
+        ];
+        if ($faqs) {
+            // Pages pass generateFAQSchema($faqs) (a FAQPage node); a plain Q/A list is accepted too.
+            $fnFaq = isset($faqs['@type']) ? $faqs : generateFAQSchema($faqs);
+            unset($fnFaq['@context']);
+            $fnFaq['@id'] = $fnUrl . '#faq';
+            $fnGraph[] = $fnFaq;
+        }
+        return ['@context' => 'https://schema.org', '@graph' => $fnGraph];
+    }
+}
+
+if (!function_exists('serviceCards')) {
+    /** Card copy for the required services component (icon, ≤14-word description, exactly 3 bullets), keyed by slug. */
+    function serviceCards(): array {
+        return [
+            'privacy-fence'      => ['icon' => 'fence',        'desc' => 'Solid board fences that close a backyard off from the street and neighbors.',
+                                     'bullets' => ['Blocks sightlines into the yard', 'Keeps pets and kids contained', 'Marks the property line clearly']],
+            'cedar-fence'        => ['icon' => 'trees',        'desc' => 'Cedar board fencing for a natural wood look around the yard.',
+                                     'bullets' => ['Rot-resistant wood by nature', 'Takes stain or sealer well', 'Weathers to a soft silver']],
+            'chain-link'         => ['icon' => 'link',         'desc' => 'Galvanized wire-mesh fencing for yards, perimeters and secure areas.',
+                                     'bullets' => ['Lowest material cost per foot', 'Keeps dogs inside the yard', 'Leaves the view wide open']],
+            'wrought-iron'       => ['icon' => 'shield-check', 'desc' => 'Ornamental metal fencing for front yards, entries, pools and security.',
+                                     'bullets' => ['Decorative without blocking views', 'Little upkeep once coated', 'Pairs with matching gates']],
+            'fence-repair'       => ['icon' => 'wrench',       'desc' => 'Fixes for leaning posts, broken boards and gates that no longer latch.',
+                                     'bullets' => ['Leaning posts set straight', 'Broken pickets and rails replaced', 'Sagging gates closing again']],
+            'fence-installation' => ['icon' => 'hammer',       'desc' => 'New fence and gate installation for residential and farm properties.',
+                                     'bullets' => ['Layout walked before digging', 'Gates planned into the run', 'Homes, acreage and farms']],
+        ];
+    }
+}
+
+if (!function_exists('serviceBySlug')) {
+    /** The config.php $services entry for a slug (pages fail loudly in dev if the slug is wrong). */
+    function serviceBySlug(string $slug): array {
+        global $services;
+        foreach ((array) $services as $fnEntry) {
+            if (($fnEntry['slug'] ?? '') === $slug) return $fnEntry;
+        }
+        trigger_error('Unknown service slug: ' . $slug, E_USER_WARNING);
+        return ['name' => $slug, 'slug' => $slug, 'description' => ''];
+    }
+}
